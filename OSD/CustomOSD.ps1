@@ -57,7 +57,7 @@ if ((Get-MyComputerManufacturer -Brief) -eq "Dell") {
     }
 
     #Dell BIOS Config
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/cattanach-mfld/osdzti/main/DellConfigure.zip" -OutFile "X:\OSDCloud\DellConfigure.zip"
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/SamSCN/SCNetworks/main/OSD/DellConfigure.zip" -OutFile "X:\OSDCloud\DellConfigure.zip"
     Expand-Archive "X:\OSDCloud\DellConfigure.zip" "X:\OSDCloud"
 
     & "X:\OSDCloud\DellConfigure\cctk.exe" --setuppwd=$password
@@ -72,7 +72,7 @@ if ((Get-MyComputerManufacturer -Brief) -eq "Dell") {
 
 
 
-
+https://github.com/SamSCN/SCNetworks/blob/d9c240b9f45dda0375817def225155290bc7418a/OSD/Flash64W.exe
 
 
 
@@ -182,7 +182,7 @@ if ((Get-MyComputerManufacturer -Brief) -eq "Dell" -and $password) {
     if ([Version]$DellUpdateFile.DellVersion -gt [Version]$BIOSVersion) {
         #======================================================================================
         #Download Flash64W from github
-        $DellFlash64wUrl = 'https://raw.githubusercontent.com/cattanach-mfld/osdzti/main/Flash64W.exe'
+        $DellFlash64wUrl = 'https://raw.githubusercontent.com/SamSCN/SCNetworks/main/OSD/Flash64W.exe'
         $DellFlash64wExe = Join-Path $DellBiosRoot "Flash64W.exe"
         #======================================================================================
         Write-Host "Downloading $DellFlash64wUrl ..." -ForegroundColor Green
