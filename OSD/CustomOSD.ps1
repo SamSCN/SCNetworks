@@ -72,11 +72,6 @@ if ((Get-MyComputerManufacturer -Brief) -eq "Dell") {
 
 
 
-https://github.com/SamSCN/SCNetworks/blob/d9c240b9f45dda0375817def225155290bc7418a/OSD/Flash64W.exe
-
-
-
-
 
 
 
