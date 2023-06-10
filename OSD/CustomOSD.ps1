@@ -221,5 +221,7 @@ if (Get-Volume.usb) {
     }
 }
 
+Invoke-WebRequest 'https://raw.githubusercontent.com/andrew-s-taylor/WindowsAutopilotInfo/main/get-windowsautopilotinfo.ps1' -OutFile 'C:\OSDCloud\AutopilotInfo.ps1'
+
 #Restart from WinPE
 wpeutil reboot
