@@ -23,12 +23,12 @@ if ((Get-MyComputerManufacturer -Brief) -eq "Dell") {
 ##########################################################################
 
 #Remove the USB Drive so that it can reboot properly
-if (Get-Volume.usb) {
-    Write-Warning "Please Remove Flash Drive"
-    while (Get-Volume.usb) {
-        Start-Sleep -Seconds 2
-    }
-}
+#if (Get-Volume.usb) {
+#    Write-Warning "Please Remove Flash Drive"
+#    while (Get-Volume.usb) {
+#        Start-Sleep -Seconds 2
+#    }
+#}
 
 ##########################################################################
 ###################### SET DELL BIOS INFO ################################
@@ -72,12 +72,14 @@ if ((Get-MyComputerManufacturer -Brief) -eq "Dell") {
 
 
 
-
-
-
 #Start OSDCloud ZTI the RIGHT way
-Write-Host  -ForegroundColor Cyan "SC Networks - Start OSDCloud"
-Start-OSDCloud -OSVersion "Windows 11" -OSLanguage en-us -OSBuild 22H2 -OSEdition Education -ZTI
+if ((Get-MyComputerManufacturer -Brief) -eq "Microsoft") {
+    Write-Host  -ForegroundColor Cyan "SC Networks - Start OSDCloud"
+    Start-OSDCloud -OSVersion "Windows 11" -OSLanguage en-us -OSBuild 21H2 -OSEdition Education -ZTI
+} else {
+    Write-Host  -ForegroundColor Cyan "SC Networks - Start OSDCloud"
+    Start-OSDCloud -OSVersion "Windows 11" -OSLanguage en-us -OSBuild 22H2 -OSEdition Education -ZTI
+}
 
 ##########################################################################
 ###################### START UPDATE DELL BIOS  ###########################
@@ -221,7 +223,7 @@ if (Get-Volume.usb) {
     }
 }
 
-Invoke-WebRequest 'https://raw.githubusercontent.com/andrew-s-taylor/WindowsAutopilotInfo/main/get-windowsautopilotinfo.ps1' -OutFile 'C:\OSDCloud\AutopilotInfo.ps1'
+#Invoke-WebRequest 'https://raw.githubusercontent.com/andrew-s-taylor/WindowsAutopilotInfo/main/get-windowsautopilotinfo.ps1' -OutFile 'C:\OSDCloud\AutopilotInfo.ps1'
 
 #Restart from WinPE
 wpeutil reboot
