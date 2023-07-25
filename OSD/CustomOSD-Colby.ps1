@@ -223,6 +223,13 @@ if (Get-Volume.usb) {
     }
 }
 
+#Download Driver Pack for MS Devices
+if ((Get-MyComputerManufacturer -Brief) -eq "Microsoft") {
+    Write-Host  -ForegroundColor Cyan "Downloading Driver Pack"
+    Save-MyDriverPack
+}
+
+
 #Invoke-WebRequest 'https://raw.githubusercontent.com/andrew-s-taylor/WindowsAutopilotInfo/main/get-windowsautopilotinfo.ps1' -OutFile 'C:\OSDCloud\AutopilotInfo.ps1'
 
 #Restart from WinPE
