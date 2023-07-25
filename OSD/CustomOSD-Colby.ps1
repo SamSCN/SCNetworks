@@ -75,7 +75,7 @@ if ((Get-MyComputerManufacturer -Brief) -eq "Dell") {
 #Start OSDCloud ZTI the RIGHT way
 if ((Get-MyComputerManufacturer -Brief) -eq "Microsoft") {
     Write-Host  -ForegroundColor Cyan "SC Networks - Start OSDCloud"
-    Start-OSDCloud -OSVersion "Windows 11" -OSLanguage en-us -OSBuild 21H2 -OSEdition Education -ZTI
+    Start-OSDCloudGUI
 } else {
     Write-Host  -ForegroundColor Cyan "SC Networks - Start OSDCloud"
     Start-OSDCloud -OSVersion "Windows 11" -OSLanguage en-us -OSBuild 22H2 -OSEdition Education -ZTI
