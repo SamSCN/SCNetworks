@@ -23,12 +23,12 @@ if ((Get-MyComputerManufacturer -Brief) -eq "Dell") {
 ##########################################################################
 
 #Remove the USB Drive so that it can reboot properly
-if (Get-Volume.usb) {
-    Write-Warning "Please Remove Flash Drive"
-    while (Get-Volume.usb) {
-        Start-Sleep -Seconds 2
-    }
-}
+#if (Get-Volume.usb) {
+#    Write-Warning "Please Remove Flash Drive"
+#    while (Get-Volume.usb) {
+#        Start-Sleep -Seconds 2
+#    }
+#}
 
 ##########################################################################
 ###################### SET DELL BIOS INFO ################################
