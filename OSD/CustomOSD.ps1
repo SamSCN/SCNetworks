@@ -77,7 +77,7 @@ if ((Get-MyComputerManufacturer -Brief) -eq "Dell") {
 
 #Start OSDCloud ZTI the RIGHT way
 Write-Host  -ForegroundColor Cyan "SC Networks - Start OSDCloud"
-Start-OSDCloud -OSVersion "Windows 11" -OSLanguage en-us -OSBuild 22H2 -OSEdition Education -ZTI
+Start-OSDCloud -OSVersion "Windows 11" -OSLanguage en-us -OSBuild 23H2 -OSEdition Education -ZTI
 
 ##########################################################################
 ###################### START UPDATE DELL BIOS  ###########################
