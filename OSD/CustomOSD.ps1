@@ -1,6 +1,14 @@
 Write-Host -ForegroundColor Cyan "SC Networks - Starting Custom OSDCloud ..."
 
 
+# Set OSDCloud Defaults
+$Global:MyOSDCloud = [ordered]@{
+    WindowsUpdate = [bool]$true
+    WindowsUpdateDrivers = [bool]$true
+    WindowsDefenderUpdate = [bool]$true
+    SetTimeZone = [bool]$true
+}
+
 ##########################################################################
 ###################### SET DELL BIOS PASS ################################
 ##########################################################################
